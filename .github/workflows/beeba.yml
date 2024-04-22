@@ -8,11 +8,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Install Yarn
+      - name: Install npm
         run: npm install
+      - run: npx playwright install 
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
+      - run: composer install
       - run: npx playwright test
 
