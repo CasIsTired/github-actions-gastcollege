@@ -6,6 +6,14 @@ jobs:
   beeba:
     runs-on: ubuntu-latest
     steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+        - name: Install dependencies
+          run: npm ci
+        - name: Install playwright browsers
+          run: npx playwright install --with-deps
+        - name: Run tests
+          run: npx playwright test
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install Yarn
