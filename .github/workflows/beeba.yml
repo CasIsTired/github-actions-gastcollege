@@ -15,5 +15,6 @@ jobs:
       - run: sh .devcontainer/start-container.sh
       - run: php artisan serve --host=0.0.0.0 --port=8000 &
       - run: npx playwright install
+      - run: npx playwright install-deps
       - run: npx playwright test
 
