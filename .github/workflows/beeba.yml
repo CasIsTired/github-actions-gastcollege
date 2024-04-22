@@ -13,7 +13,7 @@ jobs:
         with:
           php-version: '8.3'
       - run: sh .devcontainer/start-container.sh
-      - run: php artisan serve --host=0.0.0.0 --port=8000
+      - run: php artisan serve --host=0.0.0.0 --port=8000 &
       - run: npx playwright install
       - run: npx playwright test
 
